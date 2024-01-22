@@ -1,4 +1,4 @@
-module.exports.CORS = async (request, response, next) => {
+module.exports.cors = async (request, response, next) => {
   try {
     response.header(
       'Access-Control-Allow-Origin',

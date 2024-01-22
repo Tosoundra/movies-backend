@@ -8,7 +8,7 @@ const {
 const userRoute = require('./routes/userRoute/userRoute');
 const { routeNotFound } = require('./middlewares/routeNotFound/routeNotFound');
 const favoriteMoviesRoute = require('./routes/favoriteMoviesRoute/favoriteMoviesRoute');
-const { CORS } = require('./middlewares/cors/cors');
+const { cors } = require('./middlewares/cors/cors');
 const authenticationRoute = require('./routes/authenticationRoute/authenticationRoute');
 
 require('dotenv').config();
@@ -16,7 +16,7 @@ const app = require('express')();
 
 // app.use(helmet());
 
-app.use(CORS);
+app.use(cors);
 
 app.use(cookieParser());
 app.use(bodyParser.json());
