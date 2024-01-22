@@ -1,6 +1,9 @@
 module.exports.CORS = async (request, response, next) => {
   try {
-    response.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+    response.header(
+      'Access-Control-Allow-Origin',
+      'http://localhost:5173, https://tosoundra.github.io/portfolio'
+    );
     response.header(
       'Access-Control-Allow-Methods',
       'GET, POST, PUT, DELETE, PATCH, OPTIONS'
