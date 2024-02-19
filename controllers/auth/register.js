@@ -25,6 +25,6 @@ module.exports.register = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.send({ error });
+    res.status(400).send({ error: error.message });
   }
 };

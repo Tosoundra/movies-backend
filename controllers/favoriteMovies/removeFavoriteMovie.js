@@ -12,9 +12,7 @@ module.exports.removeFavoriteMovie = async (request, response) => {
       const selectedMovieToDelete = favoriteMovies.indexOf(Number(movieId));
       favoriteMovies.splice(selectedMovieToDelete, 1);
       await user.save();
-      response.send({
-        message: 'Фильм удален из списка избранных',
-      });
+      response.send(favoriteMovies);
     }
   } catch (error) {
     console.log(error);

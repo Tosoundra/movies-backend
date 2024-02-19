@@ -15,11 +15,10 @@ module.exports.authentication = async (request, response, next) => {
   } catch (error) {
     console.log(error);
     if (error instanceof jwt.JsonWebTokenError) {
-      response.status(401).send({ error: 'Передан невалидный токен' });
+      response.status(401).end();
       return;
     }
 
-    console.log(error);
     response.status(500).send({ message: error.message });
   }
 };

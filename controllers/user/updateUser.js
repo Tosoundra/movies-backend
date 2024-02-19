@@ -31,7 +31,7 @@ module.exports.updateUser = async (request, response) => {
 
     response.send({ message: 'Данные успешно обновлены!' });
   } catch (error) {
-    response.send({ error });
+    response.status(400).send({ error });
     console.log(error);
   }
 };

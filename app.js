@@ -14,7 +14,7 @@ const authenticationRoute = require('./routes/authenticationRoute/authentication
 require('dotenv').config();
 const app = require('express')();
 
-// app.use(helmet());
+app.use(helmet());
 
 app.use(cors);
 

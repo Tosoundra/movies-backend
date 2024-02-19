@@ -11,9 +11,7 @@ module.exports.addFavoriteMovie = async (request, response) => {
     if (!favoriteMovies.includes(Number(movieId))) {
       favoriteMovies.push(Number(movieId));
       await user.save();
-      response.send({
-        message: 'Фильм добавлен в список избранных',
-      });
+      response.send(favoriteMovies);
     }
   } catch (error) {
     console.log(error);
